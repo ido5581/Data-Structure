@@ -35,10 +35,14 @@ int LinkedList::getLength(){
     return length;
 }
 
+Node* LinkedList::getHead() const{
+    return head;
+}
 int main (){
     LinkedList L1(10);
     L1.append(12);
     LOG(L1.getLength());
+    LinkedList L2(30);
     return 0;
 }
 
