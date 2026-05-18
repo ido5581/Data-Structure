@@ -28,6 +28,7 @@ void LinkedList::append(int value){
     Node* newNode = new Node(value);
     tail->next = newNode;
     tail = newNode;
+    tail->next = nullptr;
     length++;
 }
 
@@ -38,18 +39,7 @@ int LinkedList::getLength(){
 Node* LinkedList::getHead() const{
     return head;
 }
-Node* LinkedList::getTail() const{
-    return tail;
-}
 
 
-int main (){
-    LinkedList L1(10);
-    L1.append(12);
-    LOG(L1.getLength());
-    LinkedList L2(30);
-    LOG(L1.getHead());
-    return 0;
-}
 
 
