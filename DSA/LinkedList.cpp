@@ -40,6 +40,22 @@ Node* LinkedList::getHead() const{
     return head;
 }
 
-
-
-
+void LinkedList::deleteLast(){
+    if(length==0) return;
+    if(length == 1){
+        delete head;
+        head = tail = nullptr;
+        length--;
+        return;
+    }
+    Node* curr = head->next;
+    Node* prev = head;
+    while(curr != tail){
+        curr = curr->next;
+        prev = prev->next;
+    }
+    tail = prev;
+    prev->next = nullptr;
+    delete curr;
+    length--;
+}

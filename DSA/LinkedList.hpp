@@ -13,6 +13,6 @@ class LinkedList{
         void append(int value);
         void deleteLast();
         int getLength();
-        Node* getHead() const;
+        Node* getHead() const; 
 };
 #endif
