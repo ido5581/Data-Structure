@@ -11,8 +11,15 @@ class LinkedList{
         ~LinkedList();
         void print();
         void append(int value);
-        void deleteLast();
+        bool deleteLast();
         int getLength();
         Node* getHead() const; 
+        void prepend(int value);
+        bool deleteFirst();
+        Node* get(int index);
+        void set(int index, int value);
+        bool insert(int index, int value);
+        bool deleteNode(int index);
+        void reverse();
 };
 #endif
