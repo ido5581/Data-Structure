@@ -137,20 +137,19 @@ bool LinkedList::deleteNode(int index){
 }
 
 void LinkedList::reverse(){
-    Node* temp = head;
-    head = tail; 
-    tail = temp;
-    delete temp;
-
-    Node* prev = tail;
-    Node* curr = tail->next;
-    Node* after = curr->next;
-    tail->next = nullptr;
-    while(curr != head){
+    if(length == 1|| head == nullptr){
+        return;
     }
-    
-    
-    
-
-    
+    Node* prev = nullptr;
+    Node* curr = head;
+    Node* after = head->next;
+    while(after != nullptr){
+        curr->next = prev;
+        prev = curr;
+        curr = after;
+        after = after->next;
+    }
+    curr->next = prev;
+    tail = head;
+    head = curr;
 }
